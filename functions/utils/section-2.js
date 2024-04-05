@@ -1,205 +1,249 @@
-const { check, runTest, skipTest } = require("../test-api/index.js");
+const { check, runTest, skipTest } = require("../../test-api/index.js");
 
-// Challenge 0
-function multiply() {
-  // This function should return the product of two numbers passed as arguements
-  // code here...
+
+//Exercise 1
+function countProperties() {
+  // This function should take an object as its argument and return the total number of properties it contains
 }
 
-runTest("multiply() can multiply 2 numbers together", function () {
-  check(multiply(3, 5)).isEqualTo(15);
-  check(multiply(17, 19)).isEqualTo(323);
-  check(multiply(-180, 2)).isEqualTo(-360);
-});
-
-// Challenge 1
-function roundDown() {
-  // This function should take a single argument of a decimal number and return its value rounded DOWN to the nearest integer.
-}
-
-skipTest(
-  "roundDown() returns the result of rounding down to the nearest integer",
+runTest(
+  "countProperties() counts the number of key-value pairs for a given object",
   function () {
-    check(roundDown(100.1)).isEqualTo(100);
-    check(roundDown(25.5)).isEqualTo(25);
-    check(roundDown(121.999)).isEqualTo(121);
-  }
-);
-
-// Challenge 2
-function raiseToPower() {
-  // This function should take two number arguments, m and n, and return m raised to the power of n.
-}
-
-skipTest("raiseToPower() raises given number to the given power", function () {
-  check(raiseToPower(10, 3)).isEqualTo(1000);
-  check(raiseToPower(25, 2)).isEqualTo(625);
-  check(raiseToPower(10, 0)).isEqualTo(1);
-});
-
-// Challenge 3
-function isMultipleOf6() {
-  // This function should take a number as an argument, and return true if it is a multiple of 6, and false otherwise.
-}
-
-skipTest(
-  "isMultipleOf6() should check if a number is divisible by 6",
-  function () {
-    check(isMultipleOf6(6)).isEqualTo(true);
-    check(isMultipleOf6(10)).isEqualTo(false);
-    check(isMultipleOf6(15)).isEqualTo(false);
-    check(isMultipleOf6(36)).isEqualTo(true);
-    check(isMultipleOf6(60)).isEqualTo(true);
-    check(isMultipleOf6(61)).isEqualTo(false);
-  }
-);
-
-// Challenge 4
-function capitaliseFirstLetter() {
-  // This function should take a string as an argument and return the same string with the first letter capitalised.
-}
-
-skipTest(
-  "capitaliseFirstLetter() capitalises the first letter in a string",
-  function () {
-    check(capitaliseFirstLetter("bang")).isEqualTo("Bang");
-    check(capitaliseFirstLetter("apple")).isEqualTo("Apple");
-    check(capitaliseFirstLetter("coding")).isEqualTo("Coding");
-  }
-);
-
-// Challenge 5
-function isInThe20thCentury() {
-  // This function should take a number as an argument representing a year, 
-  // and return true if that year is in the 20th century and false otherwise.
-}
-
-skipTest(
-  "isInThe20thCentury() checks if a number is within 1901 to 2000 (inclusive)",
-  function () {
-    check(isInThe20thCentury(1962)).isEqualTo(true);
-    check(isInThe20thCentury(1901)).isEqualTo(true);
-    check(isInThe20thCentury(1900)).isEqualTo(false);
-    check(isInThe20thCentury(1913)).isEqualTo(true);
-    check(isInThe20thCentury(1876)).isEqualTo(false);
-    check(isInThe20thCentury(2001)).isEqualTo(false);
-    check(isInThe20thCentury(2000)).isEqualTo(true);
-  }
-);
-
-// Challenge 6
-function isAbsolutePath() {
-  // This function should take a string as an argument representing a file path and return true if it is an absolute path, and false otherwise.
-  // HINT: all absolute file paths start with a /
-}
-
-skipTest(
-  "isAbsolutePath() checks if a file path is absolute or relative",
-  function () {
-    check(isAbsolutePath("/Users/mitch")).isEqualTo(true);
+    check(countProperties({})).isEqualTo(0);
+    check(countProperties({ name: "shaq" })).isEqualTo(1);
     check(
-      isAbsolutePath(
-        "/Users/mitch/northcoders/remote_course/remote_precourse_1"
-      )
-    ).isEqualTo(true);
-    check(isAbsolutePath("../composers")).isEqualTo(false);
-    check(isAbsolutePath("./applications/my-awesome-app.js")).isEqualTo(false);
+      countProperties({ name: "shaq", job: "tutor", city: "Manchester" })
+    ).isEqualTo(3);
   }
 );
 
-// Challenge 7
-
-/*
-
-This function should take a string as an argument and return a string which describes the ASCII code of that character
-
-The returned string should be in the following format:
-
-"The ASCII code for <character> is <character-code>"
-*/
-
-function getCharCode() {
-  // code here
+//Exercise 2
+function isEmptyArray() {
+  // This function should take an array as an argument and return true if the array is empty, and false otherwise
 }
 
-skipTest(
-  "getCharCode() will return a message stating the ASCII code of a passed char",
-  function () {
-    check(getCharCode("A")).isEqualTo("The ASCII code for A is 65");
-    check(getCharCode("b")).isEqualTo("The ASCII code for b is 98");
-    check(getCharCode("z")).isEqualTo("The ASCII code for z is 122");
-    check(getCharCode("k")).isEqualTo("The ASCII code for k is 107");
-    check(getCharCode("!")).isEqualTo("The ASCII code for ! is 33");
-    check(getCharCode("M")).isEqualTo("The ASCII code for M is 77");
-  }
-);
-
-// Challenge 8
-function createArray() {
-  // This function should take a length and a character as arguments and return an array of the given length populated with the given character.
-}
-
-skipTest(
-  "createArray() creates an array of the specified length using a specified character",
-  function () {
-    check(createArray(3, "!")).isEqualTo(["!", "!", "!"]);
-    check(createArray(5, "a")).isEqualTo(["a", "a", "a", "a", "a"]);
-  }
-);
-
-// Challenge 9
-/*
-This function should take a number representing a battery level as a percentage
-If the battery level is less than or equal to 5%, then you should return a string stating:
-    "Warning - battery level low: <number-here>%, please charge your device"
-If the battery level is between 5 and 99% then it should return a string stating:
-    "Battery level: <number-here>%"
-If the battery level is 100% then it should return a string stating:
-    "Fully charged :)"
-*/
-
-function checkBatteryLevel() {
-  // code here
-}
-
-skipTest(
-  "checkBatteryLevel() should return a message with info about the battery level",
-  function () {
-    check(checkBatteryLevel(100)).isEqualTo("Fully charged :)");
-
-    check(checkBatteryLevel(99)).isEqualTo("Battery level: 99%");
-    check(checkBatteryLevel(80)).isEqualTo("Battery level: 80%");
-    check(checkBatteryLevel(30)).isEqualTo("Battery level: 30%");
-    check(checkBatteryLevel(10)).isEqualTo("Battery level: 10%");
-    check(checkBatteryLevel(6)).isEqualTo("Battery level: 6%");
-
-    check(checkBatteryLevel(5)).isEqualTo(
-      "Warning - battery level low: 5%, please charge your device"
-    );
-    check(checkBatteryLevel(4)).isEqualTo(
-      "Warning - battery level low: 4%, please charge your device"
-    );
-    check(checkBatteryLevel(3)).isEqualTo(
-      "Warning - battery level low: 3%, please charge your device"
-    );
-    check(checkBatteryLevel(1)).isEqualTo(
-      "Warning - battery level low: 1%, please charge your device"
-    );
-  }
-);
-
-// Challenge 10
-function collectStrings() {
-  // This function should take an array as an argument and return an array containing all string elements from the input (retaining the order)
-}
-
-skipTest("collectStrings() can get all the strings from an array", function () {
-  check(collectStrings(["a", "b", "c"])).isEqualTo(["a", "b", "c"]);
-  check(collectStrings(["a", 10, "b", 1000, "c"])).isEqualTo(["a", "b", "c"]);
+skipTest("isEmptyArray() checks if an array is empty", function () {
+  check(isEmptyArray([])).isEqualTo(true);
+  check(isEmptyArray(["a", "b", "c", "d"])).isEqualTo(false);
+  check(isEmptyArray(["a"])).isEqualTo(false);
 });
 
-/******* Refactor Bonus Challenge *******
+//Exercise 3
+function createProfileDescription() {
+  /*
+  This function should take an object representing a person and information about whether they like to code
 
-1. Challenge 5 - complete this problem without resorting to if statements!
-2. Refactor every function into an ES6 arrow function () => {}
-*/
+  A user object will take this form:
+  {
+    name: "Mitch",
+    likesToCode: true
+  }
+
+  If the 'likesToCode' property is true, then you should return a string of the form 
+    "My name is Mitch and I like to code."
+
+  If the 'likesToCode' property is false, the string should look like
+    "My name is Mitch and I don't like to code."
+  
+  This is a good use case for String Template Literals:
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+  */
+}
+
+skipTest(
+  "createProfileDescription() will create a sentence about a whether a person likes to code or not",
+  function () {
+    check(
+      createProfileDescription({ name: "Mitch", likesToCode: true })
+    ).isEqualTo("My name is Mitch and I like to code.");
+    check(
+      createProfileDescription({ name: "Lisa", likesToCode: false })
+    ).isEqualTo("My name is Lisa and I don't like to code.");
+  }
+);
+
+// Exercise 4
+function readTrafficLight() {
+  // This function should take a string representing a traffic light colour as an argument
+  // It will be one of "red", "green" or "amber" in either uppercase or lowercase
+  // You should return a corresponding message
+}
+
+skipTest(
+  "readTrafficLight() should print a message according to the different colour passed in",
+  function () {
+    check(readTrafficLight("green")).isEqualTo("GO!");
+    check(readTrafficLight("GREEN")).isEqualTo("GO!");
+
+    check(readTrafficLight("amber")).isEqualTo("GET READY...");
+    check(readTrafficLight("AMBER")).isEqualTo("GET READY...");
+
+    check(readTrafficLight("red")).isEqualTo("STOP!");
+    check(readTrafficLight("RED")).isEqualTo("STOP!");
+  }
+);
+
+//Exercise 5
+function howManyArguments() {
+  // This function should take any number of arguments and return the number of arguments passed into the function
+  // HINT: For this one you should look up 'rest parameters' online - MDN Web Docs and devdocs are excellent sources of JavaScript documentation
+}
+
+skipTest(
+  "howManyArguments() returns the number of items passed on a single call",
+  function () {
+    check(howManyArguments("a", "b", "c")).isEqualTo(3);
+    check(howManyArguments()).isEqualTo(0);
+    check(howManyArguments(1, 2, 3, 4, 5)).isEqualTo(5);
+    check(howManyArguments("the", "meaning", "of", "life", "is", 42)).isEqualTo(
+      6
+    );
+  }
+);
+
+//Exercise 6
+function updateCoinMachine() {
+  /*
+  This function should take an object representing a coin machine and a string representing a coin as its arguments
+  A coinMachine object will take this form:
+  {
+    "1p": 0,
+    "2p": 0,
+    "5p": 0,
+    "10p": 0
+  }
+  You should 'add the provided coin to the machine' by altering the associated property and return the updated coinMachine
+  */
+}
+
+skipTest(
+  "updateCoinMachine() will create a message from an details object",
+  function () {
+    check(
+      updateCoinMachine({ "1p": 0, "2p": 0, "5p": 0, "10p": 0 }, "1p")
+    ).isEqualTo({
+      "1p": 1,
+      "2p": 0,
+      "5p": 0,
+      "10p": 0
+    });
+    check(
+      updateCoinMachine({ "1p": 0, "2p": 0, "5p": 0, "10p": 0 }, "2p")
+    ).isEqualTo({
+      "1p": 0,
+      "2p": 1,
+      "5p": 0,
+      "10p": 0
+    });
+    check(
+      updateCoinMachine({ "1p": 0, "2p": 3, "5p": 0, "10p": 0 }, "2p")
+    ).isEqualTo({
+      "1p": 0,
+      "2p": 4,
+      "5p": 0,
+      "10p": 0
+    });
+    check(
+      updateCoinMachine({ "1p": 0, "2p": 3, "5p": 10, "10p": 0 }, "5p")
+    ).isEqualTo({
+      "1p": 0,
+      "2p": 3,
+      "5p": 11,
+      "10p": 0
+    });
+    check(
+      updateCoinMachine({ "1p": 0, "2p": 3, "5p": 10, "10p": 0 }, "10p")
+    ).isEqualTo({ "1p": 0, "2p": 3, "5p": 10, "10p": 1 }, "5p");
+  }
+);
+
+//Exercise 7
+function updatePosition() {
+  /*
+  This function should take an array representing coordinates - an x position and a y position - and a string representing a direction, and it should return a new pair of coordinates, with the coords array updated by moving either x or y 1 unit in a particular direction
+
+  If direction is "up" it should move 1 unit up (+ 1 in the y direction)
+  If the direction is "down" it should move 1 unit down (- 1 in the y direction)
+  If the direction is "right" it should move 1 unit right (+ 1 in the x direction)
+  If the direction is "left" it should move 1 unit left (- 1 in the x direction)
+  */
+}
+
+skipTest("updatePosition() updates a co-ordinates array", function () {
+  check(updatePosition([10, 10], "up")).isEqualTo([10, 11]);
+  check(updatePosition([0, 0], "down")).isEqualTo([0, -1]);
+  check(updatePosition([3, 3], "left")).isEqualTo([2, 3]);
+  check(updatePosition([7, 50], "right")).isEqualTo([8, 50]);
+});
+
+// Exercise 8
+function isFalsy() {
+  // This function should take any value as an argument, and return true if it is falsy, and false otherwise
+}
+
+skipTest(
+  "isFalsy() returns true if a value is falsy and false if it is truthy",
+  function () {
+    check(isFalsy(false)).isEqualTo(true);
+    check(isFalsy("")).isEqualTo(true);
+    check(isFalsy(0)).isEqualTo(true);
+    check(isFalsy(NaN)).isEqualTo(true);
+    check(isFalsy(undefined)).isEqualTo(true);
+    check(isFalsy(null)).isEqualTo(true);
+    check(isFalsy(true)).isEqualTo(false);
+  }
+);
+
+// Exercise 9
+function checkGame() {
+  // This function should take a number representing a dice roll and a string repesenting a coin toss as its arguments
+  // A dice roll will be a number between 1 and 6
+  // A coin toss will be "H" or "T" representing heads or tails
+  // The game is considered to be won if the dice roll is 3 or higher AND the coin toss is "H"
+  // You should return true if the game has been won, and false otherwise
+}
+
+skipTest("checkGame() should check if a user was won the game", function () {
+  check(checkGame(3, "H")).isEqualTo(true);
+  check(checkGame(4, "H")).isEqualTo(true);
+  check(checkGame(5, "H")).isEqualTo(true);
+  check(checkGame(6, "H")).isEqualTo(true);
+  check(checkGame(6, "T")).isEqualTo(false);
+});
+
+//Exercise 10
+function addCoins() {
+  /*
+  In this function, a "coin collection" is represented by an array containing 4 other nested arrays, each representing a slot in the collection in the following way:
+   1p   2p   5p   10p
+  [[],  [],  [],  []] <-- coinCollection
+
+  This should take two arguments, a coin collection array and a string representing a coin, and return an updated version of the given array with the coin added at the appropriate position
+  */
+}
+
+skipTest("addCoins() will update the coins in a given slot", function () {
+  check(addCoins([[], [], [], []], "1p")).isEqualTo([["1p"], [], [], []]);
+  check(addCoins([[], [], [], []], "2p")).isEqualTo([[], ["2p"], [], []]);
+  check(addCoins([[], ["2p"], [], []], "2p")).isEqualTo([
+    [],
+    ["2p", "2p"],
+    [],
+    []
+  ]);
+  check(addCoins([[], [], [], []], "5p")).isEqualTo([[], [], ["5p"], []]);
+  check(addCoins([["1p"], [], [], ["10p", "10p"]], "2p")).isEqualTo([
+    ["1p"],
+    ["2p"],
+    [],
+    ["10p", "10p"]
+  ]);
+  check(addCoins([[], [], ["5p", "5p"], []], "5p")).isEqualTo([
+    [],
+    [],
+    ["5p", "5p", "5p"],
+    []
+  ]);
+});
+
+// Mark your progress on the Learn 2 Code platform before moving on to the next set of challenges! 
