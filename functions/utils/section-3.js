@@ -240,3 +240,19 @@ skipTest(
     ]);
   }
 );
+
+// Exercise 20
+function createLookupObject(keys, values) {
+  // This function should take two arrays of equal length. Return a look up object using the first array as keys, and the second as values, matching the indexes.
+}
+
+skipTest(
+  "createObject() creates a new object from a key value pair",
+  function () {
+    check(createLookupObject(["name"], ["stephen"])).isEqualTo({ name: "stephen" });
+    check(createLookupObject(["apple", "pear"], [3, 1])).isEqualTo({ apple: 3, pear: 1 });
+    check(createLookupObject(["base", "sauce", "topping1", "topping2"], ["thin", "bechamel", "mushrooms", "chicken"])).isEqualTo({
+      base: "thin", sauce: "bechamel", topping1: "mushrooms", topping2: "chicken"
+    });
+  }
+);
