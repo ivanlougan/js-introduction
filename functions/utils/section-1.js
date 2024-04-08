@@ -2,7 +2,7 @@ const { check, runTest, skipTest } = require("../../test-api/index.js");
 
 // Challenge 0
 function multiply() {
-  // This function should return the product of two numbers passed as arguements
+  // This function should return the product of two numbers passed as arguments
   // code here...
 }
 
@@ -111,7 +111,7 @@ skipTest(
 
 /*
 
-This function should take a string as an argument and return a string which describes the ASCII code of that character
+This function should take a string as an argument and return a string that describes the ASCII code of that character
 
 The returned string should be in the following format:
 

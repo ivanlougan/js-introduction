@@ -4,11 +4,11 @@ const mathFunctions = require("./utils/mathFunctions");
 // Change only line three
 
 /* 
-The tests in this file currently do not pass. The tests are trying to use functions which are not currently required in the file.
+The tests in this file currently do not pass. The tests are trying to use functions that are not currently required in the file.
 Research into 'object destructuring' 
 - https://www.javascripttutorial.net/es6/javascript-object-destructuring/
 
-Use object destructuring to change line 3 only, and get the tests the pass again
+Use object destructuring to change line 3 only, and get the tests to pass again
 
 You should not need to change any tests - only change line 3
 

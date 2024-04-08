@@ -5,7 +5,7 @@ Complete the function below. It will take two numbers.
 You should add these two numbers together, then return a boolean as to whether this total is even or not
 
 example:
-isTotalEven(1, 2) // returns false and 3 is not even
+isTotalEven(1, 2) // returns false as 3 is not even
 
 Complete this challenge using ONLY the functions from mathFunctions.js
 HINT: You will need to export multiple functions from the same file
