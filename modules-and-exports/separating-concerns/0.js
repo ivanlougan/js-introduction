@@ -2,7 +2,7 @@ const { check, runTest } = require("../../test-api/index.js");
 /*
 The function should take an array
 It should calculate the total of the numbers in the array
-Should then print a string which includes the total 
+It should then print a string that includes the total 
 
     example:
     const numbers = [1, 2, 3];
@@ -11,7 +11,7 @@ Should then print a string which includes the total
  */
 
 function printArrayTotal(arr) {
-  // remember to require in at least 1 util function help you solve this problem!
+  // remember to require in at least 1 util function to help you solve this problem!
 }
 
 runTest("printArrayTotal() returns a string", function () {

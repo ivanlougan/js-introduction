@@ -13,7 +13,7 @@ It should then return a boolean depending on whether the total is even or not.
 */
 
 function isArrayTotalEven(arr) {
-  // remember to require in at least 3 util functions help you solve this problem!
+  // remember to require in at least 3 util functions to help you solve this problem!
 }
 
 runTest("isArrayTotalEven() returns appropriate boolean for total", function () {
