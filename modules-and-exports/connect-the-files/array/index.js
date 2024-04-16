@@ -1,4 +1,4 @@
-const { check, runTest } = require("../../../../test-api");
+const { check, runTest } = require("../../../test-api");
 // do not change the above line
 
 const mystery = require('???') // enter the correct filepath
