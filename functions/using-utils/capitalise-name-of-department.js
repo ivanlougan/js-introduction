@@ -5,10 +5,16 @@ function capitaliseNameOfDepartment() {
 }
 
 runTest(
-  "createArrow() will return an arrow pointing in the right direction",
+  "capitaliseNameOfDepartment() will capitalise the department names ",
   function () {
     check(capitaliseNameOfDepartment("onboarding")).isEqualTo("Onboarding");
-    check(capitaliseNameOfDepartment("human resources")).isEqualTo("Human Resources");
-    check(capitaliseNameOfDepartment("department for preservation of wild berries along riverbanks")).isEqualTo("Department For Preservation Of Wild Berries Along Riverbanks");
+    check(capitaliseNameOfDepartment("human resources")).isEqualTo(
+      "Human Resources"
+    );
+    check(
+      capitaliseNameOfDepartment(
+        "department for preservation of wild berries along riverbanks"
+      )
+    ).isEqualTo("Department For Preservation Of Wild Berries Along Riverbanks");
   }
 );

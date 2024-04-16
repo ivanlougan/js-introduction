@@ -12,4 +12,3 @@ runTest(
     check(updateCharacterLocation("awsddsws", [0, 0])).isEqualTo([1, -1]);
   }
 );
-

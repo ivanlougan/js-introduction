@@ -5,9 +5,14 @@ function rearrangeAndRetrieve(array, moveIndex, retrieveNumber) {
 }
 
 runTest(
-  "createArrow() will return an arrow pointing in the right direction",
+  "rearrangeAndRetrieve will rearrange a given array based on the two indexs given",
   function () {
-    check(rearrangeAndRetrieve(['a', 'b', 'c'], 0, 1)).isEqualTo('b');
-    check(rearrangeAndRetrieve([true, false, false, true], 1, 4)).isEqualTo([true, false, true, false]);
+    check(rearrangeAndRetrieve(["a", "b", "c"], 0, 1)).isEqualTo("b");
+    check(rearrangeAndRetrieve([true, false, false, true], 1, 4)).isEqualTo([
+      true,
+      false,
+      true,
+      false,
+    ]);
   }
 );
