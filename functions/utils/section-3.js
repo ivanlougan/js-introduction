@@ -20,23 +20,8 @@ runTest(
   }
 );
 
+
 // Exercise 12
-function createObject() {
-  // This function should take an array consisting of two elements representing a key/ value pair as its argument and return an object with a single property based on the input
-}
-
-skipTest(
-  "createObject() creates a new object from a key value pair",
-  function () {
-    check(createObject(["name", "shaq"])).isEqualTo({ name: "shaq" });
-    check(createObject(["fruit", "apple"])).isEqualTo({ fruit: "apple" });
-    check(createObject(["language", "haskell"])).isEqualTo({
-      language: "haskell"
-    });
-  }
-);
-
-// Exercise 13
 function getFirstNItems() {
   // This function should take two arguments, an array and a number 'n', and return a new array containing the first 'n' items of the given array
 }
@@ -51,7 +36,7 @@ skipTest("getFirstNItems() returns the first n items in an array", function () {
   ]);
 });
 
-// Exercise 14
+// Exercise 13
 function createArrow() {
   // This function should take a string representing a direction ("left", "right", "up" or "down") as its argument and return the corresponding arrow ("←", "→", "↑", "↓")
   // You don't need to utilise an object here, but think about how you could do so
@@ -67,7 +52,7 @@ skipTest(
   }
 );
 
-// Exercise 15
+// Exercise 14
 function moveItemToEnd() {
   // This function should take two arguments, an array and an index value, and should return a new array where the item that was previously at the given index is now at the end of the array
 }
@@ -96,7 +81,7 @@ skipTest(
   }
 );
 
-// Exercise 16
+// Exercise 15
 function updateUserAge() {
   /*
   The user of our website is having a birthday!
@@ -165,7 +150,7 @@ skipTest("updateUserAge() updates the user's age", function () {
   });
 });
 
-// Exercise 17
+// Exercise 16
 function checkInfinitive() {
   // This function should take a string representing a French word as an argument, and return true if it is an infinitive verb, and false otherwise
   // A French infinitive verb is a word that ends with either "re", "ir" or "er"
@@ -189,7 +174,7 @@ skipTest(
   }
 );
 
-// Exercise 18
+// Exercise 17
 function collectPlurals() {
   // This function should take an array of strings as an argument and return an array containing all strings ending with an 's' from the input (retaining the order)
 }
@@ -214,7 +199,7 @@ skipTest(
   }
 );
 
-// Exercise 19
+// Exercise 18
 function makeAllAdmins() {
   /*
   This function should take an array of 'user' objects as an argument
@@ -241,13 +226,13 @@ skipTest(
   }
 );
 
-// Exercise 20
+// Exercise 19
 function createLookupObject(keys, values) {
   // This function should take two arrays of equal length. Return a look up object using the first array as keys, and the second as values, matching the indexes.
 }
 
 skipTest(
-  "createObject() creates a new object from a key value pair",
+  "createLookupObject() creates a new object from a key value pair",
   function () {
     check(createLookupObject(["name"], ["stephen"])).isEqualTo({ name: "stephen" });
     check(createLookupObject(["apple", "pear"], [3, 1])).isEqualTo({ apple: 3, pear: 1 });
