@@ -18,3 +18,6 @@ function isEven(num) {
 function getSquareRoot(num) {
   return Math.sqrt(num);
 }
+
+
+module.exports = {isEven, getSquareRoot, divideNumbers, multiplyNumbers, squareNumber, addNumbers}

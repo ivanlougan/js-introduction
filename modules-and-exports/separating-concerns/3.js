@@ -15,6 +15,9 @@ NOTE: You will need to adjust the util function in this example by requiring in 
 
 function checkRightAngledTriangle(triangleAngles) {
   // remember to require in at least 1 util function to help you solve this problem!
+  const isItRight = require("../separating-concerns/utils/isRightAngledTriangle.js")
+  return isItRight(triangleAngles.sideA, triangleAngles.sideB, triangleAngles.sideC) ?
+            "This is a right angled triangle" : "This is a normal triangle"
 }
 
 runTest("checkRightAngledTriangle() should return appropriate string message", function () {

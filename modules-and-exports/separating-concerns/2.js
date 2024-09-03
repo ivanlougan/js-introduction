@@ -14,6 +14,9 @@ HINT: You will need to export multiple functions from the same file
 
 function isTotalEven(num1, num2) {
   // remember to use 2 util functions to complete this task
+  const mathMethods = require("./utils/mathFunctions.js")
+  let addNums = mathMethods.addNumbers(num1, num2);
+  return mathMethods.isEven(addNums)
 }
 
 runTest("isTotalEven() should return appropriate boolean for total ", function () {

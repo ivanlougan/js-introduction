@@ -24,6 +24,10 @@ sumPurchases(item1, item2)
 
 function sumPurchases(item1, item2) {
   // remember to require in at least 1 util function to help you solve this problem!
+  const convert = require("./utils/convertToPounds.js");
+  let sum = (convert(item1.cost, item1.exchangeRate) + convert(item2.cost, item2.exchangeRate)).toFixed(2)
+  return parseFloat(sum);
+
 }
 
 runTest("sumPurchases() returns sum total of item conversions", function () {

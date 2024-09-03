@@ -14,6 +14,14 @@ It should then return a boolean depending on whether the total is even or not.
 
 function isArrayTotalEven(arr) {
   // remember to require in at least 3 util functions to help you solve this problem!
+  let removeDupa = require("../separating-concerns/utils/removeDuplicateValues.js");
+  let removedDupas = removeDupa(arr);
+  let mathMethods = require("../separating-concerns/utils/mathFunctions.js");
+  let count = 0;
+  for (let i = 0 ; i < removedDupas.length; i++) {
+    count += removedDupas[i];
+  }
+  return mathMethods.isEven(count)
 }
 
 runTest("isArrayTotalEven() returns appropriate boolean for total", function () {

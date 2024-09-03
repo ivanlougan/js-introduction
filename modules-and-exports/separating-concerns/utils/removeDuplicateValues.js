@@ -2,6 +2,12 @@ const { check, runTest } = require("../../../test-api");
 
 function removeDuplicateValues(arr) {
   //your code here
+  let uniqueNumbers = arr.reduce((acc, current) => {
+  if (!acc.includes(current)) {
+    acc.push(current)
+  }
+  return acc }, [] );
+  return uniqueNumbers;
 }
 
 runTest("removeDuplicateValues() should return an array", function () {
@@ -15,3 +21,5 @@ runTest("removeDuplicateValues() should remove duplicate values", function () {
   check(removeDuplicateValues([1, 3, 13, 1])).isEqualTo([1, 3, 13]);
   check(removeDuplicateValues([1, 1, 1])).isEqualTo([1]);
 });
+
+module.exports = removeDuplicateValues
